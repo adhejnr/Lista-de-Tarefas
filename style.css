@@ -156,3 +156,10 @@ ul {
      text-align: center;
      margin-top: 125px;
  }
+ #d1{
+     position: flex;
+     flex-direction: column;
+ }
+ #ad{
+    color: black;
+ }

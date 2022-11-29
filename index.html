@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>To Do</title>
+    <title>To Do List</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -12,14 +12,103 @@
         <li><a href="lista.html">To do List</a></li>
         <li><a href="programadores.html">Contact</a></li>
       </ul>
- 
-    <div class="container">
-        <div id="novatarefa">
-            <input type="text" placeholder="Tarefa a ser feita">
-            <button id="pressione">Adicionar</button>
-        </div>
-        <div id="tarefas"></div>
-    </div>
-    <script src="script.js"></script>
+    
+<div class="content">
+    <b>
+        <center><h1 style="font-family: 'Justice', Times, serif;"> To Do List </h1> </center></font>
+     
+   
+    <center><h2>Site dedicado a sua organização</h2>
+    <h2>Aqui você poderá fazer sua própria lista de afazeres.</h2>
+
+
+    <h3 style="font-family: 'Belle', Times, serif;">
+        Uma to do list é uma lista de tarefas, de coisas que precisam ser feitas. É uma forma de organizar as atividades que não podem ser esquecidas, e que não estão inseridas na nossa rotina.
+        É diferente de uma agenda, onde as atividades tem dia e hora para acontecer.
+    </h3>
+    <h5 style="font-family: 'Justice', Times, serif;">
+    </h5><br>
+   
+    </b>
+    </p>
+    <center><img src="IMG_4922.jpg" width="380" height="405" /> </center>
+    </p>
+</div>   
+
+
+<div class="login" >
+
+  <h2>Login</h2>  
+
+<div id="container"> 
+
+    <div id="d1">
+        <p>Nome:</p> <input type="text" id="nome">
+       
+        <p>Login:</p> 
+        <input type="text" id="login">
+      </div>
+      <div id="d2">
+        <p>Email:</p> <input type="text" id="email">
+
+        <p>Senha:</p> <input type="password" id="senha"> 
+      </div>
+      <div id="d3">
+        <p>Confirme sua senha:</p> <input type="password" id="confirmarsenha">
+      </div> <br>
+
+<div id="ad"> </div>
+
+<div class="button">
+    <button onclick="envia();" id="entra"><span>Entrar </span></button>    
+
+    
+
+</div>
+</div>
+<script>
+
+function envia(){
+            var ad = document.getElementById("ad");
+            var login = document.getElementById("login").value;
+            var nome = document.getElementById("nome").value;
+            var senha = document.getElementById("senha").value;
+            var verify = document.getElementById("confirmarsenha").value;
+            var email = document.getElementById("email").value;
+            var testa =0;
+            console.log("foi");
+            if (email.includes('@')){
+              var testa = 1;
+            }else{
+              testa=2
+            }
+      
+             if (login.length < 10){  
+               
+               ad.innerHTML+="Não foi possível fazer seu login, verifique se seu login tem menos de 10 letras"+"<br>";    
+             }
+             if(nome.length > 10){
+              
+               ad.innerHTML+="Não foi possível fazer seu login, verifique se seu nome tem mais de 10 letras"+"<br>";        
+             }
+             if  (senha!==verify ){
+              ad.innerHTML+="Senhas não coincidem"+"<br>";
+             }
+             if (testa==2) {
+              ad.innerHTML+="Não foi possível fazer seu login, verifique se seu email está correto";
+             }
+            if((login.length >= 10) && (nome.length <= 10) && (senha ==verify) && (testa!==2)) {
+              document.getElementsByClassName("content")[0].style.display="block";
+              document.getElementsByTagName("ul")[0].style.display="block";
+              document.getElementsByClassName("login")[0].style.display="none";
+      
+            }
+             
+          }
+</script>
+
+<div id="user">
+<p id="1nome"> </p>
 </body>
+
 </html>
